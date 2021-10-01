@@ -1,37 +1,40 @@
 <?php
-  $categorias = [];
-  $categorias[] = 'infantil';
-  $categorias[] = 'adolescente';
-  $categorias[] = 'adulto';
-  $categorias[] = 'idoso';
-  //print_r($categorias);
+    // alterações realizadas em 30/09/2021
+
+    session_start();
+    $categorias = [];
+    $categorias[] = 'infantil';
+    $categorias[] = 'adolescente';
+    $categorias[] = 'adulto';
+    $categorias[] = 'idoso';
+    //print_r($categorias);
+    
+    $nome = $_POST['nome'];
+    $idade = $_POST['idade'];
   
-  $nome = $_POST['nome'];
-  $idade = $_POST['idade'];
+    if (empty($nome))
+    {
+        $_SESSION['mensagem de erro'] = 'O nome não pode ser vazio';
+        return;
+    }
   
-  if (empty($nome))
-  {
-    echo 'O nome não pode ser vazio';
-    return;
-  }
+    if (strlen($nome) < 3)
+    {
+        echo 'O nome deve conter mais de 3 caracteres.';
+        return;
+    }
   
-  if (strlen($nome) < 3)
-  {
-    echo 'O nome deve conter mais de 3 caracteres.';
-    return;
-  }
+    if (strlen($nome) > 40)
+    {
+        echo 'O nome é muito extenso. No máximo 40 caracteres.';
+        return;
+    }
   
-  if (strlen($nome) > 40)
-  {
-    echo 'O nome é muito extenso. No máximo 40 caracteres.';
-    return;
-  }
-  
-  if (!is_numeric($idade))
-  {
-    echo 'Informe um número para a idade';
-    return;
-  }
+    if (!is_numeric($idade))
+    {
+        echo 'Informe um número para a idade';
+        return;
+    }
   
   /*//var_dump($nome);
   //var_dump($idade);
