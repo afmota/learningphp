@@ -4,10 +4,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-$hn = 'localhost';
-$db = 'publications';
-$un = 'amota';
-$pw = 'thmpv77d6f';
+$host = 'localhost';
+$username = 'amota';
+$password = 'thmpv77d6f';
+$dbname = 'publications';
 
 ?>
 
