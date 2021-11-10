@@ -1,10 +1,4 @@
 <?php //sqltest.php
-
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
-
 require_once 'login.php';
 $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {

@@ -1,0 +1,24 @@
+# como root
+CREATE DATABASE discoteca;
+
+GRANT ALL PRIVILEGES ON discoteca.* TO 'amota'@'localhost';
+
+#como amota
+USE discoteca;
+
+CREATE TABLE artistas (
+	id_artista INT NOT NULL AUTO_INCREMENT,
+	nome_artista VARCHAR(40) NOT NULL,
+	atividade CHAR(1),
+	PRIMARY KEY (id_artista)
+);
+
+CREATE TABLE albuns (
+	id_album INT NOT NULL AUTO_INCREMENT,
+	nome_album VARCHAR(256) NOT NULL,
+	nome_artista VARCHAR(96) NOT NULL,
+	data_lancamento VARCHAR(12) NOT NULL,
+	num_serie VARCHAR(20) NOT NULL,
+	observacao VARCHAR(256),
+	PRIMARY KEY (id_album)
+);
