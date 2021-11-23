@@ -6,7 +6,7 @@
 
 $host = 'localhost';
 $username = 'amota';
-$password = 'thmpv77d6f';
+$passwd = 'thmpv77d6f';
 $dbname = 'publications';
 
 ?>
