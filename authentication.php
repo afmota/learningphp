@@ -23,7 +23,13 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
         
         if ($token == $row[3])
         {
+            session_start();
+            $_SESSION['username'] = $un_temp;
+            $_SESSION['password'] = $pw_temp;
+            $_SESSION['forename'] = $row[0];
+            $_SESSION['surname']  = $row[1];
             echo "$row[0] $row[1] : Hi $row[0], you are logged in as '$row[2]'";
+            die("<p><a href=continue.php>Click here to continue</a></p>");
         }
         else
         {
@@ -51,7 +57,10 @@ function mysql_entities_fix_string($connection, $string)
 
 function mysql_fix_string($connection, $string)
 {
-    if (get_magic_quotes_gpc()) $string = stripslashes ($string);
+    if (get_magic_quotes_gpc()) {
+        $string = stripslashes ($string);
+    }
+    
     return $connection->real_escape_string($string);
 }
 ?>
